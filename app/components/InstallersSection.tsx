@@ -16,7 +16,7 @@ export default function InstallersSection() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-brand-navy via-brand-navy/95 to-brand-navy/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-brand-navy via-brand-navy/85 to-brand-navy/50" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
