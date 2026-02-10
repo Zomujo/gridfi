@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-brand-navy/85" />
+        <div className="absolute inset-0 bg-brand-navy/75" />
       </div>
 
       {/* Subtle background line */}

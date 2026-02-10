@@ -12,6 +12,7 @@ import TechSection from "./components/TechSection";
 import InstallersSection from "./components/InstallersSection";
 import SocialProofSection from "./components/SocialProofSection";
 import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -30,10 +31,10 @@ export default function Home() {
             src="/ghanaian-roof-solar.jpg"
             alt="Solar panels on a Ghanaian roof"
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-40"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/80 to-brand-navy/40" />
+          <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/70 to-brand-navy/30" />
         </div>
 
         {/* Floating Particles */}
@@ -96,23 +97,7 @@ export default function Home() {
       <FAQSection />
 
       {/* Footer */}
-      <footer className="py-12 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-          <div>
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <div className="w-6 h-6 bg-brand-gold rounded-sm rotated-3" />
-              <span className="text-lg font-bold text-white">GridFi Ghana Ltd.</span>
-            </div>
-            <p className="text-gray-500 text-sm">Accra, Ghana</p>
-            <p className="text-gray-500 text-sm">Licensed by Energy Commission (Pending) | SREP Financing Partner</p>
-          </div>
-          
-          <div className="flex flex-col gap-2">
-             <a href="mailto:hello@GridFi.com" className="text-gray-400 hover:text-brand-gold text-sm transition-colors">hello@GridFi.com</a>
-             <button className="text-gray-400 hover:text-brand-gold text-sm transition-colors">WhatsApp Us</button>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
