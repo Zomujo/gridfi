@@ -1,85 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
+import AnimatedGradientMesh from "./components/AnimatedGradientMesh";
+import FloatingParticles from "./components/FloatingParticles";
+import MagneticButton from "./components/MagneticButton";
+import SmoothScroll from "./components/SmoothScroll";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden">
-      {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 bg-brand-navy/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-gold rounded-sm rotated-3" />
-            <span className="text-xl font-bold tracking-tight text-white">GridFi</span>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-            <Link href="#why-us" className="hover:text-white transition-colors">Why Us</Link>
-            <Link href="#how-it-works" className="hover:text-white transition-colors">How It Works</Link>
-            <Link href="#tech" className="hover:text-white transition-colors">Technology</Link>
-            <Link href="#installers" className="hover:text-white transition-colors">For Installers</Link>
-          </div>
-
-          <Link 
-            href="#contact"
-            className="px-5 py-2.5 bg-brand-gold text-brand-navy font-bold text-sm rounded hover:bg-yellow-400 transition-colors"
-          >
-            Get My Quote
-          </Link>
-        </div>
-      </nav>
+      <SmoothScroll />
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center pt-20">
+        {/* Animated Gradient Mesh Background */}
+        <AnimatedGradientMesh />
+        
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-[2]">
           <Image
             src="/ghanaian-roof-solar.jpg"
             alt="Solar panels on a Ghanaian roof"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-30"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/80 to-brand-navy/40" />
         </div>
+
+        {/* Floating Particles */}
+        <FloatingParticles />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
               Pay for Power Briefly.<br />
-              <span className="text-brand-gold">Own It for Decades.</span>
+              <span className="inline-block bg-clip-text text-transparent bg-linear-to-r from-brand-gold via-yellow-400 to-brand-gold bg-size-[200%_auto] animate-[shimmer_3s_linear_infinite]">
+                Own It for Decades.
+              </span>
             </h1>
           </ScrollReveal>
           
           <ScrollReveal>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-              We fund 100% of your Solar and Battery setup. You pay a predictable monthly fee and take full ownership in 3 to 5 years. Enjoy uninterrupted power for decades.
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              We fund <span className="text-white font-medium">100%</span> of your Solar and Battery setup. You pay a predictable monthly fee and take full ownership in <span className="text-white font-medium">3 to 5 years</span>. Enjoy uninterrupted power for decades.
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                href="#quote"
-                className="w-full sm:w-auto px-8 py-4 bg-brand-gold text-brand-navy font-bold text-lg rounded hover:bg-yellow-400 transition-colors"
-              >
+              <MagneticButton href="#quote" variant="primary">
                 Get My Quote
-              </Link>
-              <Link 
-                href="#installers"
-                className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium text-lg rounded border border-white/20 hover:bg-white/20 transition-colors"
-              >
+              </MagneticButton>
+              <MagneticButton href="#installers" variant="secondary">
                 Installer Network
-              </Link>
+              </MagneticButton>
             </div>
           </ScrollReveal>
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+          <div className="animate-bounce text-white/40 hover:text-white/60 transition-colors cursor-pointer">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -216,7 +204,7 @@ export default function Home() {
           
           <ScrollReveal className="relative h-[400px] lg:h-[500px] bg-brand-surface rounded-2xl border border-brand-border overflow-hidden group">
              {/* Abstract Engine Visual */}
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-gold)_0%,_transparent_70%)] opacity-10 group-hover:opacity-20 transition-opacity duration-500" />
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-gold)_0%,transparent_70%)] opacity-10 group-hover:opacity-20 transition-opacity duration-500" />
              <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-0.5 opacity-20">
                {Array.from({ length: 36 }).map((_, i) => (
                  <div key={i} className="bg-brand-navy" />
@@ -287,7 +275,7 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="text-xl font-bold text-white mb-1">{item.label}</h3>
                   <p className="text-sm text-gray-300">{item.desc}</p>
