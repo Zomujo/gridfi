@@ -7,11 +7,12 @@ import MagneticButton from "./components/MagneticButton";
 import SmoothScroll from "./components/SmoothScroll";
 import Navbar from "./components/Navbar";
 import WhyUsSection from "./components/WhyUsSection";
+import HowItWorksSection from "./components/HowItWorksSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
-      {/* <SmoothScroll /> */}
+      <SmoothScroll />
       <Navbar />
 
       {/* Hero Section */}
@@ -76,46 +77,7 @@ export default function Home() {
       <WhyUsSection />
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-24 bg-brand-surface relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
-              Turn the Lights On in 3 Steps.
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8 relative">
-             {/* Connector Line (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-brand-border z-0" />
-
-            {[
-              {
-                step: "01",
-                title: "Get Prequalified (2 Minutes)",
-                desc: "Fill out our simple form. We analyze your energy usage and diesel spend to build a custom savings plan."
-              },
-              {
-                step: "02",
-                title: "Professional Installation",
-                desc: "We dispatch a Certified SREP Partner to install your Tier-1 Solar & Battery system. No wires, no mess, no downtime."
-              },
-              {
-                step: "03",
-                title: "Pay As You Save",
-                desc: "Your system goes live. You pay a fixed monthly fee via Mobile Money or Bank Transfer. We monitor the system 24/7."
-              }
-            ].map((item, i) => (
-              <ScrollReveal key={i} className="relative z-10">
-                <div className="bg-brand-navy p-8 rounded-xl border border-brand-border h-full">
-                  <span className="text-brand-gold font-mono text-xl mb-4 block">{item.step}</span>
-                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
       {/* GridFi Engine Section */}
       <section id="tech" className="py-24 bg-brand-navy relative overflow-hidden">
