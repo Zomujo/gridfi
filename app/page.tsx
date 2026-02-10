@@ -8,6 +8,10 @@ import SmoothScroll from "./components/SmoothScroll";
 import Navbar from "./components/Navbar";
 import WhyUsSection from "./components/WhyUsSection";
 import HowItWorksSection from "./components/HowItWorksSection";
+import TechSection from "./components/TechSection";
+import InstallersSection from "./components/InstallersSection";
+import SocialProofSection from "./components/SocialProofSection";
+import FAQSection from "./components/FAQSection";
 
 export default function Home() {
   return (
@@ -80,146 +84,16 @@ export default function Home() {
       <HowItWorksSection />
 
       {/* GridFi Engine Section */}
-      <section id="tech" className="py-24 bg-brand-navy relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <div className="relative">
-              <span className="text-brand-gold font-bold tracking-wider text-sm uppercase mb-4 block">Technology</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-                Powered by<br/>The GridFi Engine.
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                We don't just install panels; we manage energy. Every system is equipped with our proprietary Smart Controller, which automatically optimizes your power flow.
-              </p>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-brand-gold rounded-full" />
-                  Prioritizes free solar energy
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-brand-gold rounded-full" />
-                  Manages battery health
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-brand-gold rounded-full" />
-                  Minimizes grid consumption
-                </li>
-              </ul>
-            </div>
-          </ScrollReveal>
-          
-          <ScrollReveal className="relative h-[400px] lg:h-[500px] bg-brand-surface rounded-2xl border border-brand-border overflow-hidden group">
-             {/* Abstract Engine Visual */}
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-gold)_0%,transparent_70%)] opacity-10 group-hover:opacity-20 transition-opacity duration-500" />
-             <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-0.5 opacity-20">
-               {Array.from({ length: 36 }).map((_, i) => (
-                 <div key={i} className="bg-brand-navy" />
-               ))}
-             </div>
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                <div className="w-24 h-24 rounded-full border-2 border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(245,183,49,0.3)] bg-brand-navy">
-                  <svg className="w-10 h-10 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div className="text-brand-gold font-mono text-xs animate-pulse">OPTIMIZING FLOW...</div>
-             </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <TechSection />
 
       {/* For Installers Section */}
-      <section id="installers" className="py-24 bg-brand-surface relative">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal className="order-2 lg:order-1 relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-             <Image
-                src="/local-installer-main.webp"
-                alt="Local solar installer working"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-brand-navy/30" />
-          </ScrollReveal>
-
-          <ScrollReveal className="order-1 lg:order-2">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Solar Installers: Stop Losing Deals to "No Cash."
-            </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              You are the technical experts; we are the financial engine. Partner with GridFi to offer your clients instant Lease-to-Own financing. We pay you 100% of the hardware and installation cost upfront. You focus on the roof; we handle the risk.
-            </p>
-            <Link 
-                href="#partner-apply"
-                className="inline-block px-8 py-4 bg-brand-gold text-brand-navy font-bold text-lg rounded hover:bg-yellow-400 transition-colors"
-              >
-                Apply to be a Partner
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
+      <InstallersSection />
 
       {/* Social Proof */}
-      <section className="py-24 bg-brand-navy">
-        <div className="max-w-7xl mx-auto px-6">
-           <ScrollReveal>
-            <h2 className="text-4xl font-bold text-white mb-16 text-center">
-              Built for the African Industry.
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { label: "Factories", desc: "Protect inventory from spoilage", img: "/warehouse-2.jpeg" },
-              { label: "Private Clinics", desc: "Ensure life-saving equipment online", img: "/local-installer-1.webp" }, // Using placeholder if specific clinic img missing, or just generic tech
-              { label: "Schools & Offices", desc: "Reduce overheads & boost profit", img: "/spintex-warehouse.jpg" },
-              { label: "Gated Communities", desc: "Reliable power, no noise", img: "/gated_community.jpg" },
-            ].map((item, i) => (
-              <ScrollReveal key={i} className="group relative h-64 rounded-xl overflow-hidden cursor-pointer">
-                <Image
-                  src={item.img}
-                  alt={item.label}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-brand-navy via-brand-navy/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-1">{item.label}</h3>
-                  <p className="text-sm text-gray-300">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SocialProofSection />
 
       {/* FAQ */}
-      <section className="py-24 bg-brand-surface">
-        <div className="max-w-3xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-          </ScrollReveal>
-          
-          <div className="space-y-6">
-            <ScrollReveal>
-              <div className="bg-brand-navy p-6 rounded-lg border border-brand-border">
-                <h3 className="text-lg font-bold text-white mb-3">What happens if I miss a payment?</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  We offer a grace period for all clients. However, our systems are "Smart-Managed," meaning service may be temporarily paused if accounts are significantly overdue, similar to a prepaid meter. Power is restored instantly upon payment.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <div className="bg-brand-navy p-6 rounded-lg border border-brand-border">
-                <h3 className="text-lg font-bold text-white mb-3">Who handles maintenance?</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  We do. Your monthly fee includes full insurance and maintenance. If an inverter breaks or a panel needs cleaning, our partner network fixes it at no extra cost to you.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       {/* Footer */}
       <footer className="py-12 bg-brand-navy border-t border-white/5">
