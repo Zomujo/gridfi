@@ -6,11 +6,12 @@ import FloatingParticles from "./components/FloatingParticles";
 import MagneticButton from "./components/MagneticButton";
 import SmoothScroll from "./components/SmoothScroll";
 import Navbar from "./components/Navbar";
+import WhyUsSection from "./components/WhyUsSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col overflow-x-hidden">
-      <SmoothScroll />
+    <main className="min-h-screen flex flex-col">
+      {/* <SmoothScroll /> */}
       <Navbar />
 
       {/* Hero Section */}
@@ -19,7 +20,7 @@ export default function Home() {
         <AnimatedGradientMesh />
         
         {/* Background Image */}
-        <div className="absolute inset-0 z-[2]">
+        <div className="absolute inset-0 z-2">
           <Image
             src="/ghanaian-roof-solar.jpg"
             alt="Solar panels on a Ghanaian roof"
@@ -72,64 +73,7 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section id="why-us" className="py-24 bg-brand-navy relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
-              The Smartest Way to Power <br/>Your Home or Business.
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {[
-              {
-                title: "Zero Upfront Capital",
-                desc: "Keep your working capital for your business. We pay 100% of the equipment and installation costs. You simply pay for the service.",
-                icon: (
-                  <svg className="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                )
-              },
-              {
-                title: "Cheaper Than The Alternative",
-                desc: "Our monthly lease is designed to be 30-40% lower than the combined cost of ECG tariffs and diesel generator fuel.",
-                icon: (
-                  <svg className="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                )
-              },
-              {
-                title: "99.9% Uptime Guarantee",
-                desc: "Say goodbye to 'Dumsor.' Our smart-managed battery systems switch seamlessly in milliseconds. Your machines never stop running.",
-                icon: (
-                  <svg className="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                )
-              },
-              {
-                title: "Path to Ownership",
-                desc: "This isn't just a rental. After your lease term (3-5 years), you own the system 100%. Free power for the next 15 years.",
-                icon: (
-                  <svg className="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                )
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={i} className="bg-brand-surface p-8 rounded-xl border border-white/5 hover:border-brand-gold/30 transition-colors">
-                <div className="mb-6 bg-white/5 w-16 h-16 rounded-full flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyUsSection />
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-24 bg-brand-surface relative">

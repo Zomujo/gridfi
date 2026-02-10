@@ -9,7 +9,11 @@ export default function SmoothScroll() {
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
+      gestureOrientation: "vertical",
       smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      autoResize: true,
     });
 
     function raf(time: number) {
@@ -18,6 +22,10 @@ export default function SmoothScroll() {
     }
 
     requestAnimationFrame(raf);
+
+    // Expose lenis to window for debugging
+    // @ts-expect-error - adding to window for debugging
+    window.lenis = lenis;
 
     return () => {
       lenis.destroy();
